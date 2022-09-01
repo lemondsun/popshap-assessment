@@ -8,6 +8,8 @@ Use the package manager [npm](https://nodejs.dev/en/learn/an-introduction-to-the
 
 ```bash
 npm I --save-dev jest
+npm install firebase
+npm install -g sass
 ```
 
 ## Usage
