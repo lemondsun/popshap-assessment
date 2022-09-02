@@ -1,7 +1,7 @@
 import React from 'react';
 import './custom-input.styles.scss';
 
-function CustomInput({ handleChange, label, name, defaultValue }) {
+function CustomInput({ handleChange, label, name, defaultValue, type}) {
   return (
     <div>
       <label className={`form-input-label-${name}`}>{label}</label>
@@ -9,8 +9,8 @@ function CustomInput({ handleChange, label, name, defaultValue }) {
         className={`form-input-${name}`}
         onChange={(e) => handleChange(e)}
         name={name}
-        type="text"
         placeholder={defaultValue}
+        type={type}
       />
     </div>
   );

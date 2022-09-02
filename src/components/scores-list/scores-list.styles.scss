@@ -1,0 +1,65 @@
+.list-of-scores{
+  position: absolute;
+  top: 803px;
+  height: 620px;
+  overflow-x: hidden;
+  overflow-y: scroll;
+}
+
+.score-box-even{
+  width: 1080px;
+  height: 104px;
+  background: rgba(255, 255, 255, 0.2);
+
+  .score-box-even-text{
+    width: 550px;
+    padding-left: 78px;
+    font-family: 'Roboto', sans-serif;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 50px;
+    line-height: 110px;
+    /* identical to box height, or 352% */
+    color: #FFFFFF;
+    overflow-x: scroll;
+  }
+}
+
+.score-box-odd{
+  display: flex;
+  flex-direction: row;
+  width: 1080px;
+  height: 104px;
+
+  .score-box-odd-text{
+    width: 550px;
+    padding-left: 78px;
+    font-family: 'Roboto', sans-serif;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 50px;
+    line-height: 110px;
+    /* identical to box height, or 352% */
+    color: #FFFFFF;
+    overflow-x: scroll;
+    overflow-y: hidden;
+  }
+}
+
+.score-numbers{
+position: absolute;
+width: 110px;
+height: 162px;
+left: 899px;
+font-family: 'Roboto', sans-serif;
+font-style: normal;
+font-weight: 700;
+font-size: 63px;
+line-height: 110px;
+/* identical to box height, or 257% */
+text-align: right;
+color: #FCD44B;
+overflow-x: scroll;
+overflow-y: hidden;
+
+}

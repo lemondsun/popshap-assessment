@@ -5,7 +5,8 @@ export const createScore = async (scoreData) => {
   try {
     const docRef = await addDoc(collection(db, 'scores'), {
       firstName: scoreData.firstName,
-      lastName: scoreData.lastName
+      lastName: scoreData.lastName,
+      scores: scoreData.score
     });
     console.log('Document written with ID: ', docRef.id);
   } catch (error) {

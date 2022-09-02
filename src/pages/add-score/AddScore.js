@@ -9,7 +9,7 @@ function AddScore(props) {
   const [scoreData, setScoreData] = useState({
     firstName: '',
     lastName: '',
-    score: null
+    score: 0
   });
 
   const handleChange = (event) => {
@@ -36,19 +36,21 @@ function AddScore(props) {
           label={'First name'}
           name={'firstName'}
           defaultValue={'Type Here...'}
+          type={'text'}
         />
         <CustomInput
           label={'Last name'}
           handleChange={handleChange}
           name={'lastName'}
           defaultValue={'Type Here...'}
+          type={'text'}
         />
-        
         <CustomInput
           label={'Score'}
           handleChange={handleChange}
-          name={"score"}
+          name={'score'}
           defaultValue={'0'}
+          type={'number'}
         />
         <CustomButton
           useCase={props.useCase}

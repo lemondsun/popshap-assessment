@@ -22,7 +22,12 @@ function CurrentScores(props) {
   return (
     <div className="current-scores-page">
       <CustomTitle useCase={'list'} />
-      {scores && <ScoresList scores={scores} />}
+      {/*To avoid any loading errors, 
+      I check to make sure scores are loaded before this DOM element 
+      is called.
+         */
+        scores && <ScoresList scores={scores} />
+      }
       <CustomButton useCase={props.useCase} setPageFocus={props.setPageFocus} />
     </div>
   );
