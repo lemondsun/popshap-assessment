@@ -1,11 +1,11 @@
 import { db } from './firebase/firebase.utils';
 import { collection, getDocs, addDoc } from 'firebase/firestore';
 
-export const createScore = async (score) => {
+export const createScore = async (scoreData) => {
   try {
     const docRef = await addDoc(collection(db, 'scores'), {
-      firstName: score.firstName,
-      lastName: score.lastName
+      firstName: scoreData.firstName,
+      lastName: scoreData.lastName
     });
     console.log('Document written with ID: ', docRef.id);
   } catch (error) {
