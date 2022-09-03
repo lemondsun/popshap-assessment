@@ -4,8 +4,10 @@ import CustomInput from '../../components/custom-input/CustomInput';
 import CustomButton from '../../components/custom-button/CustomButton';
 
 import { createScore } from '../../utils/apiHelper';
+import AlertModal from '../../components/alert-modal/AlertModal';
 
-function AddScore(props) {
+function AddScore(pageFocus, setPageFocus) {
+  const [modalState, setModalState] = useState(false);
   const [scoreData, setScoreData] = useState({
     firstName: null,
     lastName: null,
@@ -19,12 +21,18 @@ function AddScore(props) {
 
   const handleSumbit = async (event) => {
     event.preventDefault();
-    try {
-      createScore(scoreData);
-    } catch (error) {
-      console.error(error);
+
+    const specialChars = /[`!@#$%^&*()_+\-=\[\]{};':"\\|,.<>\/?~]/;
+    for (const element in scoreData) {
+      scoreData[element] === null && setModalState(true);
+      specialChars.test(scoreData[element]) === true && setModalState(true);
     }
-    props.setPageFocus('scores');
+    // try {
+    //   createScore(scoreData);
+    // } catch (error) {
+    //   console.error(error);
+    // }
+    // setPageFocus('showScores');
   };
 
   return (
@@ -52,11 +60,13 @@ function AddScore(props) {
           defaultValue={'0'}
           type={'number'}
         />
-        <CustomButton
-          useCase={props.useCase}
-          setPageFocus={props.setPageFocus}
-        />
+        <CustomButton useCase={pageFocus} setPageFocus={setPageFocus}>
+          Submit
+        </CustomButton>
       </form>
+      {modalState === true && (
+        <AlertModal modalState={modalState} setModalState={setModalState} />
+      )}
     </div>
   );
 }

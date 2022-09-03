@@ -5,7 +5,7 @@ import CustomButton from '../../components/custom-button/CustomButton';
 
 import { getScores } from '../../utils/apiHelper';
 
-function CurrentScores(props) {
+function CurrentScores({pageFocus,setPageFocus}) {
   const [scores, setScores] = useState(null);
 
   useEffect(() => {
@@ -17,8 +17,9 @@ function CurrentScores(props) {
     scoresApiCall().then(() => {
       setScores(scores);
     });
-    console.log(scores)
   }, []);
+
+
 
   return (
     <div className="current-scores-page">
@@ -29,7 +30,7 @@ function CurrentScores(props) {
          */
         scores!==null && <ScoresList scores={scores} /> 
       }
-      <CustomButton useCase={props.useCase} setPageFocus={props.setPageFocus} />
+      <CustomButton pageFocus={pageFocus} setPageFocus={setPageFocus}>Add a Score</CustomButton>
     </div>
   );
 }

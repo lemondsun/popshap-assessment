@@ -17,7 +17,6 @@ function ScoresList(props) {
   };
 
   const listOfScores = sortedScores.map((score, index) =>
-    /*Here I'm  */
     index % 2 === 0 ? (
       <p className="score-box-even" key={index}>
         <span className="score-box-even-text">

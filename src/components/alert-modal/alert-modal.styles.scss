@@ -1,0 +1,23 @@
+.alert-screen-background{
+  position: absolute;
+  top: 1px;
+  width: 1080px;
+  height: 1920px;
+  background-color: rgb(210, 210, 210);
+
+  .alert-modal{
+    position: absolute;
+    top: 970px;
+    left: 140px;
+    width: 800px;
+    height: 380px;
+    text-align: center;
+    background-color: white;
+    font-family: 'Roboto', sans-serif;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 46px;
+    line-height: 75px;
+    padding: 5px;
+  }
+}
