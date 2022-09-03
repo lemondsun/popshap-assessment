@@ -1,7 +1,14 @@
 import React from 'react';
 import './custom-input.styles.scss';
 
-function CustomInput({ handleChange, label, name, defaultValue, type}) {
+function CustomInput({
+  handleChange,
+  label,
+  name,
+  defaultValue,
+  type,
+  reqiredValue
+}) {
   return (
     <div>
       <label className={`form-input-label-${name}`}>{label}</label>
@@ -11,6 +18,8 @@ function CustomInput({ handleChange, label, name, defaultValue, type}) {
         name={name}
         placeholder={defaultValue}
         type={type}
+        required
+        value={reqiredValue}
       />
     </div>
   );

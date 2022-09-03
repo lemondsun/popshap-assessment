@@ -1,38 +1,34 @@
 import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
+
 import CustomTitle from '../../components/custom-title/CustomTitle';
 import CustomInput from '../../components/custom-input/CustomInput';
 import CustomButton from '../../components/custom-button/CustomButton';
 
 import { createScore } from '../../utils/apiHelper';
-import AlertModal from '../../components/alert-modal/AlertModal';
 
-function AddScore(pageFocus, setPageFocus) {
-  const [modalState, setModalState] = useState(false);
+function AddScore({ pageFocus, setPageFocus }) {
+  const navigate = useNavigate();
   const [scoreData, setScoreData] = useState({
-    firstName: null,
-    lastName: null,
-    score: null
+    firstName: '',
+    lastName: '',
+    score: ''
   });
 
-  const handleChange = (event) => {
-    const { name, value } = event.target;
+  const handleChange = (e) => {
+    const { name, value } = e.target;
     setScoreData({ ...scoreData, [name]: value });
   };
 
   const handleSumbit = async (event) => {
     event.preventDefault();
-
-    const specialChars = /[`!@#$%^&*()_+\-=\[\]{};':"\\|,.<>\/?~]/;
-    for (const element in scoreData) {
-      scoreData[element] === null && setModalState(true);
-      specialChars.test(scoreData[element]) === true && setModalState(true);
+    try {
+      await createScore(scoreData);
+    } catch (error) {
+      console.error(error);
     }
-    // try {
-    //   createScore(scoreData);
-    // } catch (error) {
-    //   console.error(error);
-    // }
-    // setPageFocus('showScores');
+
+    navigate('/');
   };
 
   return (
@@ -45,6 +41,7 @@ function AddScore(pageFocus, setPageFocus) {
           name={'firstName'}
           defaultValue={'Type Here...'}
           type={'text'}
+          reqiredValue={scoreData.firstName}
         />
         <CustomInput
           label={'Last name'}
@@ -52,6 +49,7 @@ function AddScore(pageFocus, setPageFocus) {
           name={'lastName'}
           defaultValue={'Type Here...'}
           type={'text'}
+          reqiredValue={scoreData.lastName}
         />
         <CustomInput
           label={'Score'}
@@ -59,14 +57,12 @@ function AddScore(pageFocus, setPageFocus) {
           name={'score'}
           defaultValue={'0'}
           type={'number'}
+          reqiredValue={scoreData.score}
         />
         <CustomButton useCase={pageFocus} setPageFocus={setPageFocus}>
           Submit
         </CustomButton>
       </form>
-      {modalState === true && (
-        <AlertModal modalState={modalState} setModalState={setModalState} />
-      )}
     </div>
   );
 }

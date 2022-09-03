@@ -1,16 +1,16 @@
 import React from 'react';
-import './custom-title.styles.scss'
+import './custom-title.styles.scss';
 
-function CustomTitle(props) {
+function CustomTitle({ useCase }) {
   return (
-    <div className='title-box'>
+    <div className="title-box">
       <h1 className="custom-title">
         {
           // dynamic text based on the titles use case
-          props.useCase === 'list' ? 'Current Scores.' : 'Add a Score.'
+          useCase === 'list' ? 'Current Scores.' : 'Add a Score.'
         }
       </h1>
-      </div>
+    </div>
   );
 }
 

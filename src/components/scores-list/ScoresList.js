@@ -1,9 +1,9 @@
 import React from 'react';
 import './scores-list.styles.scss';
 
-function ScoresList(props) {
+function ScoresList({ scores }) {
   /*sorting the scores so I can loop through them in descending order */
-  const sortedScores = props.scores.sort((a, b) => b.scores - a.scores);
+  const sortedScores = scores.sort((a, b) => b.scores - a.scores);
 
   /*To avoid having to repeatedlly write out this code for
   every word in the "score-box" I made a function I can call.

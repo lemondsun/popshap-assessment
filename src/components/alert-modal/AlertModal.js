@@ -9,7 +9,8 @@ function AlertModal(props) {
     >
       <div className="alert-modal">
      
-          Please fill out the entire form before submitting<br></br>
+        Please fill out the entire form before submitting<br></br>
+        with no special characters in the inputs
           or click the button below to go back to the scores list.
     
       </div>
