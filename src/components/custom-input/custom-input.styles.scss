@@ -6,7 +6,7 @@ left: 78px;
 top: 765px;
 font-family: 'Roboto', sans-serif;
 font-style: normal;
-font-weight: 500;
+font-weight: 600;
 font-size: 46px;
 line-height: 162px;
 /* identical to box height, or 352% */
@@ -19,6 +19,22 @@ height: 104px;
 left: 78px;
 top: 887px;
 background: rgba(255, 255, 255, 0.2);
+border: none;
+font-family: 'Roboto', sans-serif;
+font-style: normal;
+font-weight: 600;
+font-size: 46px;
+line-height: 162px;
+color: #FFFFFF;
+}
+.form-input-firstName::placeholder{
+  font-family: 'Roboto', sans-serif;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 46px;
+  line-height: 162px;
+  /* identical to box height, or 352% */
+  color: rgba(255, 255, 255, 0.4);
 }
 
 .form-input-label-lastName{
@@ -29,7 +45,7 @@ left: 78px;
 top: 978px;
 font-family: 'Roboto', sans-serif;
 font-style: normal;
-font-weight: 500;
+font-weight: 600;
 font-size: 46px;
 line-height: 162px;
 /* identical to box height, or 352% */
@@ -42,6 +58,21 @@ height: 104px;
 left: 78px;
 top: 1100px;
 background: rgba(255, 255, 255, 0.2);
+font-family: 'Roboto', sans-serif;
+font-style: normal;
+font-weight: 600;
+font-size: 46px;
+line-height: 162px;
+color: #FFFFFF;
+}
+.form-input-lastName::placeholder{
+  font-family: 'Roboto', sans-serif;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 46px;
+  line-height: 162px;
+  /* identical to box height, or 352% */
+  color: rgba(255, 255, 255, 0.4);
 }
 
 .form-input-label-score{
@@ -52,7 +83,7 @@ left: 78px;
 top: 1186px;
 font-family: 'Roboto', sans-serif;
 font-style: normal;
-font-weight: 500;
+font-weight: 600;
 font-size: 46px;
 line-height: 162px;
 /* identical to box height, or 352% */
@@ -65,4 +96,25 @@ height: 193px;
 left: 78px;
 top: 1308px;
 background: rgba(255, 255, 255, 0.2);
+border: none;
+font-family: 'Roboto', sans-serif;
+font-style: normal;
+font-weight: 500;
+font-size: 128px;
+line-height: 262px;
+color: #FFFFFF;
+}
+.form-input-score::placeholder{
+  position: absolute;
+  width: 80px;
+  height: 162px;
+  left: 150px;
+  top: 30px;
+  font-family: 'Roboto', sans-serif;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 128px;
+  line-height: 262px;
+  /* identical to box height, or 127% */
+  color: rgba(255, 255, 255, 0.4);
 }

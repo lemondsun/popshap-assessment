@@ -17,6 +17,7 @@ function CurrentScores(props) {
     scoresApiCall().then(() => {
       setScores(scores);
     });
+    console.log(scores)
   }, []);
 
   return (
@@ -26,7 +27,7 @@ function CurrentScores(props) {
       I check to make sure scores are loaded before this DOM element 
       is called.
          */
-        scores && <ScoresList scores={scores} />
+        scores!==null && <ScoresList scores={scores} /> 
       }
       <CustomButton useCase={props.useCase} setPageFocus={props.setPageFocus} />
     </div>

@@ -7,9 +7,9 @@ import { createScore } from '../../utils/apiHelper';
 
 function AddScore(props) {
   const [scoreData, setScoreData] = useState({
-    firstName: '',
-    lastName: '',
-    score: 0
+    firstName: null,
+    lastName: null,
+    score: null
   });
 
   const handleChange = (event) => {
