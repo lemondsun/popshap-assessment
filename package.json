@@ -17,7 +17,7 @@
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
-    "test": "react-scripts test --watchAll --testMatch **/src/**/*.test.js",
+    "test": "jest",
     "eject": "react-scripts eject"
   },
   "eslintConfig": {
@@ -39,6 +39,10 @@
     ]
   },
   "devDependencies": {
-    "node-sass": "^7.0.1"
+    "@babel/core": "^7.18.13",
+    "@babel/preset-env": "^7.18.10",
+    "babel-jest": "^29.0.2",
+    "node-sass": "^7.0.1",
+    "react-test-renderer": "^18.2.0"
   }
 }
